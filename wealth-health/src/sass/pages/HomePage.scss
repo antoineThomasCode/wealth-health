@@ -1,0 +1,19 @@
+.homepage {
+    h1 {
+        margin-bottom: 60px;
+    }
+    .createEmployee {
+        display: flex;
+        flex-basis: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .homepage {
+        h1 {
+            margin-bottom: 40px;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.datePicker-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 45%;
+    justify-content: flex-start;
+    > label {
+        display: flex;
+        flex-basis: 100%;
+        justify-content: flex-start;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: white;
+    }
+    input {
+        display: flex;
+        flex-basis: 100%;
+        height: 30px;
+        border: none; 
+        border-radius: 5px;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 800px) {
+    .datePicker-wrapper {
+        flex-basis: 100%;
+    }
+}
