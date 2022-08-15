@@ -3,11 +3,27 @@
     display: flex;
     flex-basis: 100%;
     flex-wrap: wrap;
-    background-color: red;
     > div:first-child {
+        margin-bottom: 30px;
         display: flex;
         flex-wrap: wrap;
         flex-basis: 100%;
         justify-content: space-between;
+    }
+    .input-wrapper {
+        display: flex;
+        max-width: 120px;
+        flex-direction: column;
+        #entries-label {
+            color: black;
+            font-weight: 300;
+        }
+        select {
+            background-color: white;
+            border: solid 1px lightgray;
+            border-radius: 3px;
+            height: 25px;
+            margin-left: 5px;
+        }
     }
 }

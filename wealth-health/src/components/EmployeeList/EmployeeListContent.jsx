@@ -1,21 +1,33 @@
-import React from "react";
+import React, {useState} from "react";
 import "../../sass/components/EmployeeListContent.scss"
-import SelectInput from "../GenericComponents/SelectInput";
 import SearchBar from '../EmployeeList/SearchBar.jsx'
 import EmployeeTable from "./EmployeeTable";
 
-let numberOfEntries = [0]
+let numberOfEntries = [1, 2, 3, 4, 5 ,6, 7, 8, 9, 10]
 
 function EmployeeListContent () {
 
+    const [numberOfPage, setNumberOfPage] = useState();
+
+    function handleClickPagination (e) {
+        e.preventDefault()
+        setNumberOfPage(e.target.value)
+    }
     return (
         <div className="employeeListContent">
             <div>
-                <SelectInput  optionList={numberOfEntries} htmlFor='entries' subject='number of entries' id='entries' labelText="Entries per page"/>
+                <div className="input-wrapper">
+                    <label htmlFor="entries" id="entries-label">Entries per page</label>
+                    <select  name="entries"   id='entries'>
+                        <option value="0"></option>
+                        {numberOfEntries.map((entrie, index) => {
+                            return <option onClick={(e) => handleClickPagination(e)} key={index} value={entrie}> {entrie} </option>
+                        })}
+                    </select>
+                </div>
                 <SearchBar />
             </div>
-            <EmployeeTable />
-
+            <EmployeeTable pagination={numberOfPage}/>
         </div>
     )
 }

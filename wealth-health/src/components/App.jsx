@@ -1,6 +1,6 @@
 import '../sass/App.scss'
 import { Routes, Route} from "react-router-dom";
-import Header from './Generic components/Header';
+import Header from '../components/GenericComponents/Header';
 import EmployeesList from '../Pages/EmployeesList';
 import Home from '../Pages/Home';
 import Page404 from '../Pages/404';
