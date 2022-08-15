@@ -1,0 +1,13 @@
+.employeeListContent {
+    margin-top: 60px;
+    display: flex;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    background-color: red;
+    > div:first-child {
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis: 100%;
+        justify-content: space-between;
+    }
+}
