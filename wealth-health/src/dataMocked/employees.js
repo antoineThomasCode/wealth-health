@@ -107,7 +107,42 @@ const employees = [
     state : 'France',
     zipCode : '10200' 
 },
-    
+{ 
+    id: 10,
+    lastName: 'Snow',
+    firstName: 'Jon',
+    startDate: '22/02/2022',
+    department: 'Sales',
+    dateOfBirth : '22/03/1994',
+    street : 'Rue De Gaulle',
+    city : 'Bar sur Aube',
+    state : 'France',
+    zipCode : '10200' 
+},
+{ 
+    id: 11,
+    lastName: 'Snow',
+    firstName: 'Jon',
+    startDate: '22/02/2022',
+    department: 'Sales',
+    dateOfBirth : '22/03/1994',
+    street : 'Rue De Gaulle',
+    city : 'Bar sur Aube',
+    state : 'France',
+    zipCode : '10200' 
+},
+{ 
+    id: 12,
+    lastName: 'Snow',
+    firstName: 'Jon',
+    startDate: '22/02/2022',
+    department: 'Sales',
+    dateOfBirth : '22/03/1994',
+    street : 'Rue De Gaulle',
+    city : 'Bar sur Aube',
+    state : 'France',
+    zipCode : '10200' 
+},
 ];
 
 export default employees

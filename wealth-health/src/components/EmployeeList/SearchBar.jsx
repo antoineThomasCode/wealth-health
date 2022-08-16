@@ -1,4 +1,5 @@
 import React from "react";
+import '../../sass/components/SearchBar.scss'
 
 function SearchBar () {
 
