@@ -4,6 +4,10 @@
     flex-wrap: wrap;
     row-gap: 5px;
     color: black;
+    position: relative;
+    .error {
+        border: solid 2px red;
+    }
     label {
         display: flex;
         justify-content: flex-start;
@@ -17,6 +21,12 @@
         height: 30px;
         border-radius: 5px;
         border :solid 1px lightgray;
+    }
+    .error-message {
+        position: absolute;
+        top: 55px;
+        font-size: 0.7em;
+        color: red;
     }
     
 }
