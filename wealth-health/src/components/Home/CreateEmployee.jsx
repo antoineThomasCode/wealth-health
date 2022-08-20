@@ -5,10 +5,15 @@ import GenericDatePicker from "../GenericComponents/DatePicker";
 import SelectInput from "../GenericComponents/SelectInput";
 import {states} from '../../dataMocked/states'
 import {departments} from '../../dataMocked/departments'
-
+import { useDispatch, useSelector } from "react-redux";
+import {createEmployee} from "../../redux/features/employee"
 
 function CreateEmployee () {
 
+    //redux
+    const dispatch = useDispatch()
+    let newIndex = useSelector((state)=> state.employee.length)
+    // states
     const [postIsReady, setPostIsReady] = useState(true);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -40,24 +45,27 @@ function CreateEmployee () {
         setPostIsReady(true)
         if (firstName !== '' && lastName !== '' && birthDate !== '' && startDate !== '' && street !== '' && city !== '' && zipCode !== '' && department !== '' && stateLocation !== '') {
             const createdEmployee = {
-                firstname : firstName,
-                lastname : lastName,
-                birthDate : birthDate, 
+                id : newIndex+=2,
+                firstName : firstName,
+                lastName : lastName,
+                dateOfBirth : birthDate, 
                 startDate : startDate,
                 street : street,
                 city : city,
-                zipcode : zipCode,
-                stateLocation : stateLocation, 
+                zipCode : zipCode,
+                state : stateLocation, 
                 department : department
             }
-            setFinaleEmployeeObject(createdEmployee)
-            console.log(finaleEmployeeObject)
+            console.log(createdEmployee)
+            dispatch(createEmployee(createdEmployee))
+            
+
         } else {
             setPostIsReady(false)
         }
     }
 
-    console.log(finaleEmployeeObject)
+
     return (
         <div className="createEmployee">
                 <Form onSubmit={handleSubmit}>

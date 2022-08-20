@@ -7,7 +7,7 @@ let numberOfEntries = [1, 2, 3, 4, 5 ,6, 7, 8, 9, 10]
 
 function EmployeeListContent () {
 
-    const [numberOfPage, setNumberOfPage] = useState();
+    const [numberOfPage, setNumberOfPage] = useState(3);
 
     function handleClickPagination (e) {
         e.preventDefault()
