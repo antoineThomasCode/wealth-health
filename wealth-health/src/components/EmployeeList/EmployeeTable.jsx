@@ -73,6 +73,7 @@ export default function EmployeeTable({pagination}) {
       editable: true,
     }
   ];
+  console.log(pagination)
   return (
     <Box sx={{ height: 525, width: '100%' }}>
       <DataGrid

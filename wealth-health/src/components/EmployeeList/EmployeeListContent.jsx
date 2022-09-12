@@ -9,9 +9,8 @@ function EmployeeListContent () {
 
     const [numberOfPage, setNumberOfPage] = useState(3);
 
-    function handleClickPagination (e) {
-        e.preventDefault()
-        setNumberOfPage(e.target.value)
+    function handleClickPagination (entrie) {
+        setNumberOfPage(entrie)
     }
     return (
         <div className="employeeListContent">
@@ -21,7 +20,7 @@ function EmployeeListContent () {
                     <select  name="entries"   id='entries'>
                         <option value="0"></option>
                         {numberOfEntries.map((entrie, index) => {
-                            return <option onClick={(e) => handleClickPagination(e)} key={index} value={entrie}> {entrie} </option>
+                            return <option onClick={(e) => handleClickPagination(entrie)} key={index} value={entrie}> {entrie} </option>
                         })}
                     </select>
                 </div>

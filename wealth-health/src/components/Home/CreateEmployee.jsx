@@ -7,6 +7,7 @@ import {states} from '../../dataMocked/states'
 import {departments} from '../../dataMocked/departments'
 import { useDispatch, useSelector } from "react-redux";
 import {createEmployee} from "../../redux/features/employee"
+import Modal from "at-modal-package/src/components/Modal";
 
 function CreateEmployee () {
 
@@ -25,6 +26,8 @@ function CreateEmployee () {
     const [zipCode, setZipCode] = useState('');
     const [department, setDepartment] = useState(''); 
 
+    //state for the modal 
+    const [isDisplayed, setModalDisplay] = useState(false)
     // final employee object to send to the backend 
 
     const [finaleEmployeeObject, setFinaleEmployeeObject] = useState();
@@ -42,7 +45,7 @@ function CreateEmployee () {
 
     function handleSubmit (e) {
         e.preventDefault()
-        setPostIsReady(true)
+        setModalDisplay(true)
         if (firstName !== '' && lastName !== '' && birthDate !== '' && startDate !== '' && street !== '' && city !== '' && zipCode !== '' && department !== '' && stateLocation !== '') {
             const createdEmployee = {
                 id : newIndex+=2,
@@ -58,6 +61,7 @@ function CreateEmployee () {
             }
             console.log(createdEmployee)
             dispatch(createEmployee(createdEmployee))
+
             
 
         } else {
@@ -155,6 +159,7 @@ function CreateEmployee () {
                     <span className="divider"></span>
                 {!postIsReady ? (<p className="error-message">Please complete all information</p>) : null}
                 </Form>
+                {isDisplayed ? (<Modal setModalState={setModalDisplay} title='je suis la modale'><p>je suis la modale </p></Modal>) : null}
             </div>
     )
 }
