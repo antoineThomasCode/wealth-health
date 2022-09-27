@@ -7,7 +7,7 @@ import {states} from '../../dataMocked/states'
 import {departments} from '../../dataMocked/departments'
 import { useDispatch, useSelector } from "react-redux";
 import {createEmployee} from "../../redux/features/employee"
-import Modal from "at-modal-package/src/components/Modal";
+import Modal from "at-npm-modal-package"
 
 function CreateEmployee () {
 
@@ -45,7 +45,7 @@ function CreateEmployee () {
 
     function handleSubmit (e) {
         e.preventDefault()
-        setModalDisplay(true)
+        
         if (firstName !== '' && lastName !== '' && birthDate !== '' && startDate !== '' && street !== '' && city !== '' && zipCode !== '' && department !== '' && stateLocation !== '') {
             const createdEmployee = {
                 id : newIndex+=2,
@@ -60,6 +60,7 @@ function CreateEmployee () {
                 department : department
             }
             console.log(createdEmployee)
+            setModalDisplay(true)
             dispatch(createEmployee(createdEmployee))
 
             
@@ -159,7 +160,7 @@ function CreateEmployee () {
                     <span className="divider"></span>
                 {!postIsReady ? (<p className="error-message">Please complete all information</p>) : null}
                 </Form>
-                {isDisplayed ? (<Modal setModalState={setModalDisplay} title='je suis la modale'><p>je suis la modale </p></Modal>) : null}
+                {isDisplayed ? (<Modal setModalState={setModalDisplay} title='New employee added'><p> you can close the modal </p></Modal>) : null}
             </div>
     )
 }
