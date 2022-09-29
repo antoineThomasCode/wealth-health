@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types'
 
 function SelectInput ({subject, htmlFor, labelText, optionList, id, onChange}) {
 
@@ -14,4 +15,13 @@ function SelectInput ({subject, htmlFor, labelText, optionList, id, onChange}) {
         </div>
     )
 }
+
+SelectInput.propTypes = {
+    subject : PropTypes.string,
+    htmlFor : PropTypes.string,
+    labelText : PropTypes?.string,
+    optionList : PropTypes.array,
+    id : PropTypes.string,
+}
+
 export default SelectInput

@@ -1,13 +1,13 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "../../sass/components/EmployeeListContent.scss"
-import SearchBar from '../EmployeeList/SearchBar.jsx'
 import EmployeeTable from "./EmployeeTable";
+
 
 let numberOfEntries = [1, 2, 3, 4, 5 ,6, 7, 8, 9, 10]
 
 function EmployeeListContent () {
 
-    const [numberOfPage, setNumberOfPage] = useState(3);
+    const [numberOfPage, setNumberOfPage] = useState(6);
 
     function handleClickPagination (entrie) {
         setNumberOfPage(entrie)
@@ -24,7 +24,6 @@ function EmployeeListContent () {
                         })}
                     </select>
                 </div>
-                <SearchBar />
             </div>
             <EmployeeTable pagination={numberOfPage}/>
         </div>

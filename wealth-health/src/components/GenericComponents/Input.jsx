@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import '../../sass/components/Input.scss'
 
-function Input ({htmlfor,type , labelText, name , id, value, onChange, errorText, validation}) {
+function Input ({htmlfor,type , labelText, name , id, value, onChange, errorText, validation, dataTestId}) {
     
     const [error, setError] = useState(false);
 
@@ -17,7 +17,7 @@ function Input ({htmlfor,type , labelText, name , id, value, onChange, errorText
     }
 
     return (
-        <div className="input-wrapper">
+        <div className="input-wrapper" data-testid={dataTestId}>
             <label htmlFor={htmlfor}>{labelText}</label>
             <input type={type} className={error ? ('error') : null} name={name} id={id} value={value} onChange={(e) => handleChangeInput(e)}/>
             {error ? (<p className="error-message">{errorText}</p>) : null}

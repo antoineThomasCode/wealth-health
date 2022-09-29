@@ -72,9 +72,10 @@ function CreateEmployee () {
 
 
     return (
-        <div className="createEmployee">
-                <Form onSubmit={handleSubmit}>
+        <div className="createEmployee" role="main-form">
+                <Form onSubmit={handleSubmit} >
                     <Input 
+                    dataTestId="firstname"
                     htmlfor='firstname' 
                     onChange={(e) => handleChangeValue(e, setFirstName)}
                     type='text'
@@ -85,6 +86,7 @@ function CreateEmployee () {
                     validation="([A-Z][a-zA-Z])"
                     />
                     <Input 
+                    dataTestId='lastname'
                     htmlfor='lastname' 
                     onChange={(e) => handleChangeValue(e, setLastName)} 
                     type='text' 
@@ -111,6 +113,7 @@ function CreateEmployee () {
                     <div className="adressContainer">
                         <h2>Address</h2>
                         <Input 
+                        dataTestId='street'
                         htmlfor='street' 
                         onChange={(e) => handleChangeValue(e, setStreet)} 
                         type='text' 
@@ -121,6 +124,7 @@ function CreateEmployee () {
                         errorText='Please enter a valid street' 
                         />
                         <Input 
+                        dataTestId="city"
                         htmlfor='city' 
                         onChange={(e) => handleChangeValue(e, setCity)} 
                         type='text' 
@@ -139,6 +143,7 @@ function CreateEmployee () {
                         id="stateSelect"
                         />
                         <Input 
+                        dataTestId='zipcode'
                         htmlfor='zipCode' 
                         onChange={(e) => handleChangeValue(e, setZipCode)} 
                         type='text' 

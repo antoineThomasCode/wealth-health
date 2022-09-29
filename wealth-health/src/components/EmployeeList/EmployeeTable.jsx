@@ -2,9 +2,8 @@ import '../../sass/components/EmployeeTable.scss'
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
-import employees from '../../dataMocked/employees';
 import { useSelector } from "react-redux";
-
+import PropTypes from 'prop-types'
 
 
 
@@ -73,7 +72,6 @@ export default function EmployeeTable({pagination}) {
       editable: true,
     }
   ];
-  console.log(pagination)
   return (
     <Box sx={{ height: 525, width: '100%' }}>
       <DataGrid
@@ -86,4 +84,8 @@ export default function EmployeeTable({pagination}) {
       />
     </Box>
   );
+}
+
+EmployeeTable.propTypes = {
+    pagination: PropTypes.number
 }

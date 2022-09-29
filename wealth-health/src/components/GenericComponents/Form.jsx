@@ -1,5 +1,6 @@
 import React from "react";
 import "../../sass/components/Form.scss";
+import PropTypes from 'prop-types'
 
 function Form ({className, children, onSubmit}) {
 
@@ -10,6 +11,10 @@ function Form ({className, children, onSubmit}) {
         </form>
 
     )
+}
+
+Form.propTypes = {
+    className : PropTypes.string
 }
 
 export default Form
