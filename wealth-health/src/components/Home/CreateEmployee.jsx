@@ -28,9 +28,8 @@ function CreateEmployee () {
 
     //state for the modal 
     const [isDisplayed, setModalDisplay] = useState(false)
-    // final employee object to send to the backend 
 
-    const [finaleEmployeeObject, setFinaleEmployeeObject] = useState();
+
 
     // handle change functions 
 
